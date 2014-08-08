@@ -7,6 +7,11 @@
 # All rights reserved - Do Not Redistribute
 #
 
+case node['platform_family']
+when "rhel"
+	include_recipe 'yum-epel::default'
+end
+
 package "tmux" do
 	action :install
 end
