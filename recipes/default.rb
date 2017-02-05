@@ -16,11 +16,11 @@ package "tmux" do
 	action :install
 end
 
-cookbook_file "/etc/tmux.conf" do
+remote_file "/etc/tmux.conf" do
 	owner "root"
 	group "root"
 	mode "0644"
-	source "tmux.conf"
+	source "https://raw.githubusercontent.com/karuru6225/dotfiles/master/.tmux.conf"
 end
 
 file "/etc/profile.d/tmux.sh" do
